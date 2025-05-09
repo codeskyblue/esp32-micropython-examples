@@ -28,7 +28,11 @@
 - [hmc5008l](hmc5883l) 进口罗盘模块
 - [板载LED控制](builtin_led.py)
 - [SSD1306](ssd1306) 0.96英寸OLED屏幕 （阳光下看不清楚） 已经搞定中文显示
+- [TM1637 4位数码管](tm1637)
+- [SG90 9G经典舵机](servo_9g)
+- TODO: GPS模块
 
 # Links
 - https://github.com/micropython/micropython-lib
 - https://github.com/mcauser/awesome-micropython
+- https://docs.geeksman.com/
