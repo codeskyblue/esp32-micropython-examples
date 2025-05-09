@@ -1,6 +1,34 @@
 # esp32-micropython-examples
 经过我自己实践的esp32 micropython例子程序
 
+# 烧录工具
+
+下面这个比较简单，能自动识别型号，选择相应的固件。
+
+使用Edge浏览器打开 <https://dev.16302.com/tools/deviceinit>
+
+引脚图
+
+```
++------------+           
+|5         5V|           
+|6        GND|           
+|7       3.3V|
+|8   ESPC3  4|
+|9          3|
+|10         2|
+|20         1|
+|21         0|
++------------+
+```
+
+# Examples
+
 - [qmc5883l](qmc5883l) 国产罗盘模块
 - [hmc5008l](hmc5883l) 进口罗盘模块
+- [板载LED控制](builtin_led.py)
+- [SSD1306](ssd1306) 0.96英寸OLED屏幕 （阳光下看不清楚） 已经搞定中文显示
 
+# Links
+- https://github.com/micropython/micropython-lib
+- https://github.com/mcauser/awesome-micropython
