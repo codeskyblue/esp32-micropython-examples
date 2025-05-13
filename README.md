@@ -20,6 +20,9 @@
 |20         1|
 |21         0|
 +------------+
+
+GPIO-8: 板载LED (低电平开启)
+GPIO-9: Boot按钮 （低电平触发）
 ```
 
 # Examples
@@ -33,6 +36,7 @@
 - TODO: GPS模块
 
 # Links
+- https://docs.micropython.org/en/latest/
 - https://github.com/micropython/micropython-lib
 - https://github.com/mcauser/awesome-micropython
 - https://docs.geeksman.com/
