@@ -33,7 +33,38 @@ GPIO-9: Boot按钮 （低电平触发）
 - [SSD1306](ssd1306) 0.96英寸OLED屏幕 （阳光下看不清楚） 已经搞定中文显示
 - [TM1637 4位数码管](tm1637)
 - [SG90 9G经典舵机](servo_9g)
-- TODO: GPS模块
+- [mpu6050](mpu6050) 6轴陀螺仪
+- [GPS模块](gps)
+- [button](button) 按钮（todo）
+
+
+# 如何擦除固件
+
+```sh
+$ python -m serial.tools.list_ports
+/dev/cu.Bluetooth-Incoming-Port
+/dev/cu.MT810-F3C5
+/dev/cu.usbserial-0001
+
+$ esptool.py --port /dev/cu.usbserial-0001 erase_flash
+esptool.py v4.7.0
+Serial port /dev/cu.usbserial-0001
+Connecting.......
+Detecting chip type... Unsupported detection protocol, switching and trying again...
+Connecting.........
+Detecting chip type... ESP32
+Chip is ESP32-D0WD-V3 (revision v3.1)
+Features: WiFi, BT, Dual Core, 240MHz, VRef calibration in efuse, Coding Scheme None
+Crystal is 40MHz
+MAC: 88:13:bf:0d:32:78
+Uploading stub...
+Running stub...
+Stub running...
+Erasing flash (this may take a while)...
+Chip erase completed successfully in 0.0s
+Hard resetting via RTS pin...
+```
+
 
 # Links
 - https://docs.micropython.org/en/latest/

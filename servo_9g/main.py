@@ -2,9 +2,12 @@
 import time
 from servo import Servo
 
-servo = Servo(7) # PWM Pin 7
+servo = Servo(21) # PWM Pin 7
 degrees = [0, 90, 180, 90]
 
 for deg in degrees:
     servo.write(deg)
-    time.sleep_ms(500)
+    print("Degree:", deg)
+    time.sleep(1)
+
+servo.write(0)

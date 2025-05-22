@@ -2,16 +2,9 @@ from micropyGPS import MicropyGPS
 from machine import RTC, UART
 import asyncio
 import time
-from machine import Pin, I2C
-import ssd1306
-
-# using default address 0x3C
-
 
 class GPS:
     def __init__(self, rx: int, tx: int):
-        self.i2c = I2C(scl=Pin(0), sda=Pin(1))
-        self.oled = ssd1306.SSD1306_I2C(128, 64, self.i2c)
         self.uart = UART(1, baudrate=9600, rx=tx, tx=rx)
         self.mgps = MicropyGPS()
         self.mgps.local_offset = 8
@@ -33,13 +26,6 @@ class GPS:
     async def show(self):
         while True:
             g = self.mgps
-            oled = self.oled
-            oled.fill(0)
-            oled.text(f"course: {g.course}", 0, 0)
-            oled.text(f"speed: {g.speed_string()}", 0, 10)
-            oled.text(f"sate: {g.satellites_in_use}/{g.satellites_in_view}", 0, 20)
-            oled.text(f"time: {g.timestamp[0]:02}:{g.timestamp[1]:02}:{int(g.timestamp[2]):02}", 0, 30)
-            oled.show()
             print("Lat:", g.latitude_string())
             print("Lon:", g.longitude_string())
             print("course:", g.course)
